@@ -1,6 +1,24 @@
 package br.ufrn.imd.controleestoque.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+
+import java.util.List;
+
+@Entity
 public class Papel {
 	private String nome;
-	private String permissoes;
+
+	@OneToMany
+	private List<String> permissoes;
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
 }
